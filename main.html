@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoya Paya - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='45' cy='45' r='30' stroke='%232B6CB0' stroke-width='10' fill='none'/><line x1='66' y1='66' x2='90' y2='90' stroke='%232B6CB0' stroke-width='12' stroke-linecap='round'/><path d='M38 32l8-10 6 6-8 10z' fill='%23D69E2E'/><rect x='44' y='46' width='12' height='10' rx='2' fill='%23E53E3E'/><rect x='30' y='42' width='10' height='12' rx='2' fill='%2338A169'/></svg>">
+    <style>
+        .comic-title {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+            color: #1a365d;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+        }
+        .comic-brand {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1.5px;
+            font-size: 1.5rem;
+            color: #1a365d;
+        }
+        .comic-subtitle, body, .form-control, .form-select, .btn, .modal-title, .card-text, small, .nav-link {
+            font-family: 'Comic Neue', cursive;
+        }
+        .comic-heading {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1px;
+        }
+        .item-img {
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body style="background: url('background.jpeg') no-repeat center center fixed; background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background: rgba(255, 255, 255, 0.80); border-bottom: 1px solid rgba(255, 255, 255, 0.6);">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+                <img src="logo.png" alt="Khoya Paya Logo" style="height: 40px; width: auto;">
+                <span class="comic-brand">KHOYA PAYA</span>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-outline-primary btn-sm fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#dashboardModal">My Dashboard</button>
+                <button class="btn btn-primary btn-sm fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#postModal">+ Post Item</button>
+                <a href="#" class="btn btn-outline-dark btn-sm fw-bold">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="row g-2 mb-4">
+            <div class="col-md-8">
+                <input type="text" class="form-control shadow-sm" placeholder="Search lost items (e.g. Wallet, Keys, Phone)..." style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(255, 255, 255, 0.6);">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select shadow-sm" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(255, 255, 255, 0.6);">
+                    <option selected>All Items</option>
+                    <option value="lost">Lost Items Only</option>
+                    <option value="found">Found Items Only</option>
+                </select>
+            </div>
+        </div>
+        <h3 class="comic-heading fw-bold mb-3 text-dark">Recent Items</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 rounded-4 shadow-sm" style="background: rgba(255, 255, 255, 0.80); border: 1px solid rgba(255, 255, 255, 0.6);">
+                    <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=500&auto=format&fit=crop&q=60" class="card-img-top rounded-top-4 item-img" alt="Honda Bike Keys">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-danger fw-bold">LOST</span>
+                            <small class="text-muted fw-bold">2 hrs ago</small>
+                        </div>
+                        <h5 class="card-title comic-heading fw-bold text-dark">Honda Bike Keys</h5>
+                        <p class="card-text text-dark small fw-bold flex-grow-1">Black key ring with a red ribbon attached. Lost near main cafeteria.</p>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-outline-dark btn-sm w-50 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#detailModal">Details</button>
+                            <button class="btn btn-primary btn-sm w-50 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#contactModal">I Found This</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4 shadow-sm" style="background: rgba(255, 255, 255, 0.80); border: 1px solid rgba(255, 255, 255, 0.6);">
+                    <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&auto=format&fit=crop&q=60" class="card-img-top rounded-top-4 item-img" alt="Brown Leather Wallet">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-danger fw-bold">LOST</span>
+                            <small class="text-muted fw-bold">5 hrs ago</small>
+                        </div>
+                        <h5 class="card-title comic-heading fw-bold text-dark">Brown Leather Wallet</h5>
+                        <p class="card-text text-dark small fw-bold flex-grow-1">Contains student ID and CNIC. Lost in the computer lab.</p>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-outline-dark btn-sm w-50 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#detailModal">Details</button>
+                            <button class="btn btn-primary btn-sm w-50 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#contactModal">I Found This</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 rounded-4 shadow-sm" style="background: rgba(255, 255, 255, 0.80); border: 2px solid #0d6efd;">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop&q=60" class="card-img-top rounded-top-4 item-img" alt="Blue Samsung Phone">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-success fw-bold">MY POST</span>
+                            <small class="text-muted fw-bold">1 day ago</small>
+                        </div>
+                        <h5 class="card-title comic-heading fw-bold text-dark">Blue Samsung Phone</h5>
+                        <p class="card-text text-dark small fw-bold flex-grow-1">Blue cover with minor scratch on the back. Lost near library.</p>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-outline-dark btn-sm w-50 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#detailModal">Details</button>
+                            <button class="btn btn-outline-success btn-sm w-50 fw-bold shadow-sm">Recovered</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dashboardModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 shadow" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.8);">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <h5 class="modal-title comic-heading fs-3 fw-bold text-dark mb-0">My Dashboard</h5>
+                        <p class="text-muted small mb-0">Manage and track your active lost & found reports</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm rounded-3 p-3" style="background: rgba(255, 255, 255, 0.9);">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="badge bg-success fw-bold mb-1">ACTIVE POST</span>
+                                        <h6 class="comic-heading fw-bold text-dark mb-1">Blue Samsung Phone</h6>
+                                        <p class="text-muted small mb-0">Posted 1 day ago • Lost near library</p>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-dark btn-sm fw-bold" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#detailModal">View</button>
+                                        <button class="btn btn-outline-success btn-sm fw-bold">Mark Recovered</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.8);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title comic-heading fs-4 fw-bold text-dark">Item Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=500&auto=format&fit=crop&q=60" class="img-fluid rounded-3 mb-3 shadow-sm w-100 item-img" alt="Detailed Item Image">
+                    <div class="mb-2">
+                        <span class="badge bg-danger fw-bold">LOST</span>
+                        <small class="text-muted ms-2 fw-bold">Reported 2 hrs ago</small>
+                    </div>
+                    <h4 class="comic-heading fw-bold text-dark mb-2">Honda Bike Keys</h4>
+                    <p class="text-dark small fw-bold mb-3">Black key ring with a red ribbon attached. Lost near main cafeteria. If found, please contact immediately via the button below.</p>
+                    <div class="p-3 rounded-3 bg-light mb-3 border">
+                        <p class="small mb-1 text-muted fw-bold">Posted by: <span class="text-dark">Shayan Ghaffar</span></p>
+                        <p class="small mb-0 text-muted fw-bold">Location: <span class="text-dark">Main Cafeteria</span></p>
+                    </div>
+                    <button class="btn btn-primary w-100 fw-bold shadow-sm py-2" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#contactModal">I Found This Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.8);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title comic-heading fs-4 fw-bold text-dark">Notify Owner</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-dark">Your Phone Number</label>
+                            <input type="tel" class="form-control shadow-sm" placeholder="03001234567" required style="background: rgba(255, 255, 255, 0.9);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-dark">Upload Photo of Found Item</label>
+                            <input class="form-control shadow-sm" type="file" required style="background: rgba(255, 255, 255, 0.9);">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold shadow-sm py-2" style="letter-spacing: 0.5px;">Send Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 shadow" style="background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.8);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title comic-heading fs-4 fw-bold text-dark">Post Lost Item</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-dark">Item Title</label>
+                            <input type="text" class="form-control shadow-sm" placeholder="e.g. Black Backpack" required style="background: rgba(255, 255, 255, 0.9);">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-dark">Description</label>
+                            <textarea class="form-control shadow-sm" rows="3" placeholder="Where did you lose it? Provide details..." required style="background: rgba(255, 255, 255, 0.9);"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-dark">Item Image</label>
+                            <input class="form-control shadow-sm" type="file" required style="background: rgba(255, 255, 255, 0.9);">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold shadow-sm py-2" style="letter-spacing: 0.5px;">Publish Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

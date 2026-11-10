@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoya Paya - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='45' cy='45' r='30' stroke='%232B6CB0' stroke-width='10' fill='none'/><line x1='66' y1='66' x2='90' y2='90' stroke='%232B6CB0' stroke-width='12' stroke-linecap='round'/><path d='M38 32l8-10 6 6-8 10z' fill='%23D69E2E'/><rect x='44' y='46' width='12' height='10' rx='2' fill='%23E53E3E'/><rect x='30' y='42' width='10' height='12' rx='2' fill='%2338A169'/></svg>">
+    <style>
+        .comic-title {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+            color: #1a365d;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+        }
+        .comic-subtitle {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100" style="background: url('background.jpeg') no-repeat center center fixed; background-size: cover;">
+    
+    <div class="card border-0 rounded-4 shadow-sm" style="max-width: 380px; width: 100%; background: rgba(255, 255, 255, 0.80); border: 1px solid rgba(255, 255, 255, 0.6);">
+        <div class="card-body p-4">
+            <div class="text-center mb-3">
+                <img src="logo.png" alt="Khoya Paya Logo" style="height: 110px; width: auto;" class="d-block mx-auto">
+                <h2 class="comic-title mb-0" style="margin-top: -10px;">KHOYA PAYA</h2> 
+                <p class="comic-subtitle text-muted small mb-0">Sign in to your account</p>
+            </div>
+            <form action="#">
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="email" placeholder="Email" required style="background: rgba(255, 255, 255, 0.85);">
+                    <label for="email">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required style="background: rgba(255, 255, 255, 0.85);">
+                    <label for="password">Password</label>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember">
+                        <label class="form-check-label small text-muted" for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="small text-decoration-none fw-bold">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold shadow-sm" style="font-family: 'Comic Neue', cursive; font-size: 1.1rem; letter-spacing: 0.5px;">LOGIN!</button>
+            </form>
+            <div class="text-center pt-2">
+                <p class="small text-muted mb-0 comic-subtitle">Don't have an account? <a href="#" class="text-decoration-none fw-bold text-primary">Register</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
