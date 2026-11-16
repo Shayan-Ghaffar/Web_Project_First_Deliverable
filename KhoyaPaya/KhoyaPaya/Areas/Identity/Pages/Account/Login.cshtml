@@ -1,0 +1,73 @@
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoya Paya - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .comic-title {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+            color: #1a365d;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        .comic-subtitle {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100" style="background: url('/images/background.jpeg') no-repeat center center fixed; background-size: cover;">
+
+    <div class="card border-0 rounded-4 shadow-sm" style="max-width: 380px; width: 100%; background: rgba(255, 255, 255, 0.80); border: 1px solid rgba(255, 255, 255, 0.6);">
+        <div class="card-body p-4">
+            <div class="text-center mb-3">
+                <img src="~/images/logo.png" alt="Khoya Paya Logo" style="height: 110px; width: auto;" class="d-block mx-auto">
+                <h2 class="comic-title mb-0" style="margin-top: -10px;">KHOYA PAYA</h2>
+                <p class="comic-subtitle text-muted small mb-0">Sign in to your account</p>
+            </div>
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger small mb-2" role="alert"></div>
+
+                <div class="form-floating mb-2">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="background: rgba(255, 255, 255, 0.85);" />
+                    <label asp-for="Input.Email">Email address</label>
+                    <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Password" style="background: rgba(255, 255, 255, 0.85);" />
+                    <label asp-for="Input.Password">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        <label class="form-check-label small text-muted" asp-for="Input.RememberMe">Remember me</label>
+                    </div>
+                    <a id="forgot-password" asp-page="./ForgotPassword" class="small text-decoration-none fw-bold">Forgot password?</a>
+                </div>
+
+                <button id="login-submit" type="submit" class="btn btn-primary w-100 py-2 fw-bold shadow-sm" style="font-family: 'Comic Neue', cursive; font-size: 1.1rem; letter-spacing: 0.5px;">LOGIN!</button>
+            </form>
+            <div class="text-center pt-2">
+                <p class="small text-muted mb-0 comic-subtitle">Don't have an account? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="text-decoration-none fw-bold text-primary">Register</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

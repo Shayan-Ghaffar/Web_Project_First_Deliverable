@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KhoyaPaya</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KhoyaPaya.styles.css" asp-append-version="true" />
+    <style>
+        .comic-title {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            font-size: 2.2rem;
+            color: #1a365d;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        .comic-brand {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1.5px;
+            font-size: 1.5rem;
+            color: #1a365d;
+        }
+
+        .comic-subtitle, body, .form-control, .form-select, .btn, .modal-title, .card-text, small, .nav-link {
+            font-family: 'Comic Neue', cursive !important;
+        }
+
+        .comic-heading {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body style="background: url('/images/background.jpeg') no-repeat center center fixed; background-size: cover; min-height: 100vh; padding-bottom: 60px;">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light shadow-sm bg-white bg-opacity-75 border-bottom box-shadow mb-3" style="backdrop-filter: blur(5px);">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="Khoya Paya Logo" style="height: 40px; width: auto;">
+                    <span class="comic-brand">KHOYA PAYA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-white bg-opacity-75 py-2 fixed-bottom shadow-sm" style="backdrop-filter: blur(5px);">
+        <div class="container text-center fw-bold">
+            &copy; 2026 - KhoyaPaya
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
